@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 TonyM. All rights reserved.
 //
 
-void afficherMatChar(char matrice[N][M])
+void afficherMatriceChar(char matrice[N][M])
 {
     int i, j;
     
@@ -30,6 +30,34 @@ void lireMatriceChar(char matrice[N][M])
             printf("\n");
         }
         printf("\n");
+    }
+}
+
+int presentMatriceChar(char matrice[N][M], char c)
+{
+    int i, j;
+    
+    for (i=0; i<N; i++) {
+        for (j=0; j<M; j++) {
+            if(strcmp(matrice[i][j], c))
+                return 1;
+        }
+    }
+    
+    return 0;
+}
+
+void sauvegarderMatriceCharFichier(char matrice[N][M], FILE * save)
+{
+    int i, j;
+    
+    fprintf(save, "%c", '\n');
+    
+    for(i=0; i<N; i++) {
+        for (j=0; j<M; j++) {
+            fprintf(save, "%c", mat[i][j]);
+        }
+        fprintf(save, "%c", '\n');
     }
 }
 
@@ -57,6 +85,34 @@ void lireMatriceInt(int matrice[N][M])
             printf("\n");
         }
         printf("\n");
+    }
+}
+
+int presentMatriceInt(int matrice[N][M], int n)
+{
+    int i, j;
+    
+    for (i=0; i<N; i++) {
+        for (j=0; j<M; j++) {
+            if(matrice[i][j]==n)
+                return 1;
+        }
+    }
+    
+    return 0;
+}
+
+void sauvegarderMatriceIntFichier(int matrice[N][M], FILE * save)
+{
+    int i, j;
+    
+    fprintf(save, "%c", '\n');
+    
+    for(i=0; i<N; i++) {
+        for (j=0; j<M; j++) {
+            fprintf(save, "%i", mat[i][j]);
+        }
+        fprintf(save, "%c", '\n');
     }
 }
 
