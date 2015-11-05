@@ -55,7 +55,7 @@ void sauvegarderMatriceCharFichier(char matrice[N][M], FILE * save)
     
     for(i=0; i<N; i++) {
         for (j=0; j<M; j++) {
-            fprintf(save, "%c", mat[i][j]);
+            fprintf(save, "%c", matrice[i][j]);
         }
         fprintf(save, "%c", '\n');
     }
@@ -110,7 +110,7 @@ void sauvegarderMatriceIntFichier(int matrice[N][M], FILE * save)
     
     for(i=0; i<N; i++) {
         for (j=0; j<M; j++) {
-            fprintf(save, "%i", mat[i][j]);
+            fprintf(save, "%i", matrice[i][j]);
         }
         fprintf(save, "%c", '\n');
     }

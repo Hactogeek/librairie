@@ -26,6 +26,29 @@ void lireTabChar(char tableau[N])
     }
 }
 
+int presentTableauChar(char tableau[N], char c)
+{
+    int i, j;
+    
+    for (i=0; i<N; i++) {
+        if(strcmp(tableau[i], c))
+            return 1;
+    }
+    
+    return 0;
+}
+
+void sauvegarderTableauCharFichier(char tableau[N], FILE * save)
+{
+    int i, j;
+    
+    fprintf(save, "%c", '\n');
+    
+    for(i=0; i<N; i++) {
+        fprintf(save, "%c", tableau[i]);
+    }
+}
+
 void afficherTabInt(int tableau[N])
 {
     int i;
@@ -43,6 +66,29 @@ void lireTabInt(int tableau[N])
         printf("Colone %i : ");
         scanf("%i", &tableau[i]);
         printf("\n");
+    }
+}
+
+int presentTableauInt(int tableau[N], int n)
+{
+    int i, j;
+    
+    for (i=0; i<N; i++) {
+        if(tableau[i]==n)
+            return 1;
+    }
+    
+    return 0;
+}
+
+void sauvegarderTableauIntFichier(int tableau[N], FILE * save)
+{
+    int i, j;
+    
+    fprintf(save, "%c", '\n');
+    
+    for(i=0; i<N; i++) {
+        fprintf(save, "%i", tableau[i]);
     }
 }
 
@@ -76,4 +122,3 @@ int minValeurTabInt(int tableau[N])
     
     return min;
 }
-
